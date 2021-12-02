@@ -1,0 +1,22 @@
+Algoritm for prefix array
+import time
+arr=[6,3,-2,4,-1,0,-5]
+sum=0;
+t1=time.time();
+for i,val in enumerate(arr):
+    sum=sum+val
+    arr.remove(val)
+    arr.insert(i,sum)
+q=int(input())
+while(q!=0):
+    print("enter the value of i and j to find the sum")
+    i,j=map(int,input().split())
+    if(i==0):
+        print(arr[j])
+    else:
+        print(arr[j]-arr[i-1])
+    q-=1;
+t2=time.time();
+print(str(t2-t1)) 
+
+Time Complexity is O(n)
